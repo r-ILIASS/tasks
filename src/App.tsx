@@ -9,6 +9,7 @@ const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [todo, setTodo] = useState<string>("");
 
+  // Add a todo item to the state
   const handleAdd = (e: React.SyntheticEvent): void => {
     e.preventDefault();
 
