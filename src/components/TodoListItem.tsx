@@ -17,6 +17,11 @@ const TodoListItem: React.FC<Props> = ({ todo, todos, setTodos }) => {
     );
   };
 
+  const handleDelete = (id: number): void => {
+    setTodos(todos.filter((item) => item.id !== id));
+    console.log("delete", id);
+  };
+
   return (
     <form className="flex items-center w-full border rounded-md py-2 px-4 text-sm shadow-md">
       <p className={`flex flex-grow ${todo.isDone && "line-through"}`}>
@@ -30,7 +35,10 @@ const TodoListItem: React.FC<Props> = ({ todo, todos, setTodos }) => {
           className="text-green-500 cursor-pointer hover:scale-125 transition ease-out"
         />
         <FiEdit className="text-gray-600 cursor-pointer" />
-        <FiTrash2 className="text-red-500 cursor-pointer" />
+        <FiTrash2
+          onClick={() => handleDelete(todo.id)}
+          className="text-red-500 cursor-pointer"
+        />
       </span>
     </form>
   );
