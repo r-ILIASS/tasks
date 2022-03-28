@@ -15,7 +15,7 @@ const InputField: React.FC<Props> = ({ todo, setTodo, handleAdd }) => {
         onChange={(e) => setTodo(e.target.value)}
         type="text"
         placeholder="What's on your mind?"
-        className="w-full border pr-3 pl-5 py-3 rounded-xl shadow-md"
+        className="w-full border pr-3 pl-5 py-3 rounded-full shadow-md"
       />
       <button
         type="submit"
